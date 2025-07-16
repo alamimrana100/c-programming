@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <ctype.h>
+int isVowel(char ch) {
+ch = tolower(ch); 
+return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+int countVowels(char str[]) {
+int count = 0;
+for (int i = 0; str[i] != '\0'; i++) {
+if (isVowel(str[i])) {
+count++;
+}
+}
+return count;
+}
+int main() {
+char input[100];
+scanf("%s", input); 
+int vowelCount = countVowels(input);
+printf("%d\n", vowelCount);
+return 0;
+}
